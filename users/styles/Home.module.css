@@ -6,7 +6,7 @@
 }
 
 .grid {
-    margin-top: 10vh;
+    margin: 10vh 0px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -16,11 +16,65 @@
     align-items: stretch;
 }
 
-.btn {
-    width: 100px;
- }
+.form{
+
+    margin-top: 20px;
+    display: flex;
+    gap: 5px;
+}
+
+.input{
+    width: 350px;
+    outline: none;
+    border-radius: 10px;
+    border-color: transparent;
+}
+
+.btnSearch{
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 30px;
+    padding: 0 15px;
+    color: #fff;
+    background-color: rgb(250, 108, 25);
+    display: flex;
+    align-items: center;
+    
+}
+
+
 
  .card{
     border: 1px solid black;
+    height: 200px;
+    width: 350px;
+    display: flex;
+
+ }
+
+ .main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 10px;
+ }
+ .pp{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    object-fit: fill;
+    background-size: contain;
+    border-radius: 50%;
     
+ }
+
+ .data{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 1rem;
+    gap: 10px;
  }

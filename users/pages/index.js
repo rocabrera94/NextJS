@@ -4,31 +4,49 @@ import homeStyles from '../styles/Home.module.css'
 import { useState } from "react"
 export default function Home({users}) {
   const [input, setInput] = useState('');
+ 
+  
+
   return (
     <div className={homeStyles.container} >
       <h1>USERS</h1>
       <div className={homeStyles.form}>
-        <input type='text' 
+        <input
+        type='text'
+        className={homeStyles.input} 
         value={input}
         onChange={(e)=>{setInput(e.target.value)}}
         />
-        
-        <Link href={{
+      
+        <Link 
+          href={{
             pathname: '/Users/[user]',
-            query:{users:'users', user:JSON.stringify(users), input:input }
-          }}>Search</Link>
+            query:{users:'users', user:JSON.stringify(users), input: input}
+          }}
+          className={homeStyles.btnSearch}
+          >Search
+        </Link>
         
       </div>
       <button onClick={()=>console.log(users)} className={homeStyles.btn}>data</button>
       <div className={homeStyles.grid}>
-      {users.users.map((user, index)=>(
-        <div key={user.id} className={homeStyles.card}>
-          <p>Name:{user.firstName} {user.lastName}</p>
-          <p>Id: #{user.id}</p>
-          <Link href={{
-            pathname: '/Id/[id]',
-            query:{ id: user.id, firstName: user.firstName, lastName:user.lastName, userName: user.username}
-          }}>See Profile</Link>
+      {users.users.map((user)=>(
+        <div key={user.id} className={homeStyles.card}  >
+          <div className={homeStyles.main}>
+            <p>{user.firstName} {user.lastName}</p>
+            <div className={homeStyles.pp} style={{backgroundImage: `url(${user.image})`}}></div>
+          </div>
+          
+          <div className={homeStyles.data}>
+            <p>Id: #{user.id}</p>
+            <p>Email: {user.email}</p>
+            <p>University: {user.university}</p>
+            <p>Phone:{user.phone}</p>
+            <Link href={{
+              pathname: '/Id/[id]',
+              query:{ id: user.id, firstName: user.firstName, lastName:user.lastName, userName: user.username}
+            }}>See Profile</Link>
+          </div>
         </div>
       ))}
       </div>

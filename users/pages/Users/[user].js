@@ -3,15 +3,32 @@ import { useRouter } from "next/router"
 const User = () => {
   
   const router = useRouter()
-  const {user, input} = router.query
-  const objUser = JSON.parse(user)
+  const {user, users, input} = router.query
+  const objUser = JSON.parse(user);
+  let lowerInput = input.toLowerCase()
+  let searchEl = []
+  objUser.users.forEach(element => {
+    if (element.firstName.toLowerCase().includes(input) || element.lastName.toLowerCase().includes(input)){
+      searchEl.push(element)
+    }
+  });
   return (
-    <div> 
-      <h1>LALALA</h1>
-      <button onClick={()=>console.log(input)}>users</button>      
-      <Link href='/' >go back home</Link>
-    </div>  
+    <div>
+      <button onClick={()=>console.log(searchEl)}>user</button>
+      <button onClick={()=>console.log(lowerInput)}>input</button>
+      {searchEl.map((el)=>(
+        <div key={el.id}>
+          <p>{el.firstName} {el.lastName}</p>
+          <Link href={{
+              pathname: '/Id/[id]',
+              query:{ id: el.id, firstName: el.firstName, lastName:el.lastName, userName: el.username}
+            }}>See Profile</Link>
+        </div>
+      ))}
+    </div>
   )
+  
 }
 
 export default User
+
