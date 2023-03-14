@@ -9,7 +9,7 @@ export default function Home({users}) {
 
   return (
     <div className={homeStyles.container} >
-      <h1>USERS</h1>
+      <p className={homeStyles.title}>ROBOTS</p>
       <div className={homeStyles.form}>
         <input
         type='text'
@@ -21,7 +21,7 @@ export default function Home({users}) {
         <Link 
           href={{
             pathname: '/Users/[user]',
-            query:{users:'users', user:JSON.stringify(users), input: input}
+            query:{users:'users', user:JSON.stringify(users), input: input.toLowerCase()}
           }}
           className={homeStyles.btnSearch}
           >Search
