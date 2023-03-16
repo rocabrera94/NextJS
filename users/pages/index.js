@@ -42,10 +42,13 @@ export default function Home({users}) {
             <p>Email: {user.email}</p>
             <p>University: {user.university}</p>
             <p>Phone:{user.phone}</p>
-            <Link href={{
+            <Link 
+              href={{
               pathname: '/Id/[id]',
               query:{ id: user.id, firstName: user.firstName, lastName:user.lastName, userName: user.username}
-            }}>See Profile</Link>
+            }}
+              className={homeStyles.link}
+            >See Profile</Link>
           </div>
         </div>
       ))}

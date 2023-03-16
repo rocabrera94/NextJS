@@ -54,10 +54,10 @@
 
  .card{
     border: 1px solid black;
-    height: 200px;
+    height: 220px;
     width: 350px;
     display: flex;
-
+    font-family: 'Courier New', Courier, monospace;
  }
 
  .main{
@@ -88,4 +88,13 @@
     text-align: left;
     padding: 0.5rem;
     gap: 10px;
+    font-weight: bold;
+ }
+
+ .link{
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
  }
