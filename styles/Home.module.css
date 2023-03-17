@@ -1,0 +1,100 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 5rem;
+    margin: 25px 0px;
+    font-weight: 600;
+}
+
+.grid {
+    margin: 10vh 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.form{
+
+    margin-top: 20px;
+    display: flex;
+    gap: 5px;
+}
+
+.input{
+    width: 350px;
+    border: 1.5px solid #000; 
+    border-radius: 10px;
+    
+}
+
+.btnSearch{
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 30px;
+    padding: 0 15px;
+    color: #fff;
+    background-color: rgb(250, 108, 25);
+    display: flex;
+    align-items: center;
+    
+}
+
+
+
+ .card{
+    border: 1px solid black;
+    height: 220px;
+    width: 350px;
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+ }
+
+ .main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 10px;
+    align-items: center;
+    width: 40%;
+    text-align: center;
+ }
+ .pp{
+    width: 80px;
+    height: 80px;
+    border: 1px solid black;
+    object-fit: fill;
+    background-size: contain;
+    border-radius: 50%;
+    
+ }
+
+ .data{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 100%;
+    justify-content: space-evenly;
+    text-align: left;
+    padding: 0.5rem;
+    gap: 10px;
+    font-weight: bold;
+ }
+
+ .link{
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+ }
